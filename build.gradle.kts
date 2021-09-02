@@ -15,18 +15,18 @@ repositories {
     mavenCentral()
 }
 
-//tasks {
-//    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
-//        kotlinOptions {
-//            jvmTarget = "11"
-//        }
-//    }
-//    withType<Jar> {
-//        manifest {
-//            attributes["Main-Class"] = "com.akramas.straight.ApplicationKt"
-//        }
-//    }
-//}
+tasks {
+    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
+    }
+    withType<Jar> {
+        manifest {
+            attributes["Main-Class"] = "io.ktor.server.netty.EngineMain"
+        }
+    }
+}
 
 dependencies {
     implementation("io.ktor:ktor-websockets:$ktor_version")
