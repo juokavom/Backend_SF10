@@ -7,8 +7,6 @@ plugins {
     kotlin("jvm") version "1.5.21"
 }
 
-group = "com.akramas.straight"
-version = "0.0.1"
 application {
     mainClass.set("com.akramas.straight.ApplicationKt")
 }
