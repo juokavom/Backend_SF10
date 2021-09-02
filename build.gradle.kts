@@ -8,7 +8,7 @@ plugins {
 }
 
 application {
-    mainClass.set("com.akramas.straight.ApplicationKt")
+    mainClass.set("io.ktor.server.netty.EngineMain")
 }
 
 repositories {
