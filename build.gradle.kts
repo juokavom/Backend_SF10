@@ -15,6 +15,14 @@ repositories {
     mavenCentral()
 }
 
+tasks {
+    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
+    }
+}
+
 dependencies {
     implementation("io.ktor:ktor-websockets:$ktor_version")
     implementation("io.ktor:ktor-server-core:$ktor_version")
