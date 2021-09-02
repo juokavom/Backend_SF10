@@ -22,13 +22,13 @@ import io.ktor.server.testing.*
 import com.akramas.straight.plugins.*
 
 class ApplicationTest {
-    @Test
-    fun testRoot() {
-        withTestApplication({ configureRouting() }) {
-            handleRequest(HttpMethod.Get, "/").apply {
-                assertEquals(HttpStatusCode.OK, response.status())
-                assertEquals("Hello World!", response.content)
-            }
-        }
-    }
+//    @Test
+//    fun testRoot() {
+//        withTestApplication({ configureRouting() }) {
+//            handleRequest(HttpMethod.Get, "/").apply {
+//                assertEquals(HttpStatusCode.OK, response.status())
+//                assertEquals("Hello World!", response.content)
+//            }
+//        }
+//    }
 }
