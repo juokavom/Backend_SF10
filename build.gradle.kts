@@ -21,6 +21,11 @@ tasks {
             jvmTarget = "11"
         }
     }
+    withType<Jar> {
+        manifest {
+            attributes["Main-Class"] = "com.akramas.straight.ApplicationKt"
+        }
+    }
 }
 
 dependencies {
