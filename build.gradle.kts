@@ -5,10 +5,11 @@ val logback_version: String by project
 plugins {
     application
     kotlin("jvm") version "1.5.21"
+    id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
 application {
-    mainClass.set("io.ktor.server.netty.EngineMain")
+    mainClass.set("com.akramas.straight.ApplicationKt")
 }
 
 repositories {
@@ -16,18 +17,13 @@ repositories {
 }
 
 tasks {
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
-        kotlinOptions {
-            jvmTarget = "11"
-        }
-    }
-    withType<Jar> {
+    shadowJar {
         manifest {
-            attributes["Main-Class"] = "io.ktor.server.netty.EngineMain"
+            attributes(Pair("Main-Class", "com.akramas.straight.ApplicationKt"))
         }
+        archiveFileName.set("server.jar")
     }
 }
-
 dependencies {
     implementation("io.ktor:ktor-websockets:$ktor_version")
     implementation("io.ktor:ktor-server-core:$ktor_version")
