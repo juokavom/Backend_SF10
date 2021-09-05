@@ -13,8 +13,11 @@ fun Application.configureRouting() {
 
     routing {
         get("/") {
-                call.respondText("CD pipeline done!W")
-            }
+            call.respondText("CD pipeline done!")
+        }
+        get("/test/test/test") {
+            call.respondText("Test test test")
+        }
         get<MyLocation> {
                 call.respondText("Location: name=${it.name}, arg1=${it.arg1}, arg2=${it.arg2}")
             }
